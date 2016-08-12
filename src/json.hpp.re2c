@@ -7703,9 +7703,13 @@ class basic_json
                     re2c:indent:string    = "    ";
                     re2c:indent:top       = 1;
                     re2c:labelprefix      = "basic_json_parser_";
+                    
+                    // ignore js comments as whitespace
+                    c_comment = "/*" ([^*] | ("*" [^/]))* "*""/";
+                    cxx_comment = "//" [^\n]* "\n";
 
                     // ignore whitespace
-                    ws = [ \t\n\r]+;
+                    ws = [ \t\n\r]+ | c_comment | cxx_comment;
                     ws   { continue; }
 
                     // ignore byte-order-mark
