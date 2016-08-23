@@ -14,6 +14,7 @@ SOURCES = src/unit.cpp \
           src/unit-class_iterator.cpp \
           src/unit-class_lexer.cpp \
           src/unit-class_parser.cpp \
+          src/unit-comments.cpp \
           src/unit-comparison.cpp \
           src/unit-concepts.cpp \
           src/unit-constructor1.cpp \
